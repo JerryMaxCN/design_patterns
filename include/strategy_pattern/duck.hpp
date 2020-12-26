@@ -21,6 +21,16 @@ namespace design_patterns
 
             virtual void display() const = 0;
 
+            void setFlyBehavior(std::shared_ptr<FlyBehavior> newFlyBehavior)
+            {
+                pFlyBehavior = newFlyBehavior;
+            }
+
+            void setQuackBehavior(std::shared_ptr<QuackBehavior> newQuackBehavior)
+            {
+                pQuackBehavior = newQuackBehavior;
+            }
+
             void performFly() const { pFlyBehavior->fly(); }
 
             void performQuack() const { pQuackBehavior->quack(); }
@@ -48,6 +58,11 @@ namespace design_patterns
         using namespace strategy_pattern;
         std::shared_ptr<Duck> duck = std::make_shared<MallardDuck>();
         duck->display();
+        duck->performQuack();
+        duck->performFly();
+
+        duck->setFlyBehavior(std::make_shared<FlyNoWay>());
+        duck->setQuackBehavior(std::make_shared<MuteQuack>());
         duck->performQuack();
         duck->performFly();
     }
