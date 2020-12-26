@@ -3,6 +3,6 @@
 
 int main()
 {
-    design_patterns::test_strategy_pattern();
+    design_patterns::testStrategyPattern();
     return 0;
 }

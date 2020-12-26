@@ -53,7 +53,7 @@ namespace design_patterns
 
     } // namespace strategy_pattern
 
-    inline void test_strategy_pattern()
+    inline void testStrategyPattern()
     {
         using namespace strategy_pattern;
         std::shared_ptr<Duck> duck = std::make_shared<MallardDuck>();
