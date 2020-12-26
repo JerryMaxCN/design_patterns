@@ -1,12 +1,8 @@
 #include "std.hpp"
+#include "strategy_pattern/duck.hpp"
 
-std::optional<int> foo(bool flag) {
-    if (flag) return {100};
-    else return {};
-}
-
-int main() {
-    auto op = foo(true);
-    std::cout << op.has_value() << std::endl;
+int main()
+{
+    design_patterns::test_strategy_pattern();
     return 0;
 }
