@@ -3,45 +3,40 @@
 
 #include <cstdio>
 
-namespace design_patterns
-{
-    namespace strategy_pattern
-    {
-        class IQuackBehavior
-        {
-        public:
-            virtual ~IQuackBehavior() {}
+namespace design_patterns {
 
-            virtual void quack() const = 0;
-        };
+namespace strategy_pattern {
 
-        class Quack : public IQuackBehavior
-        {
-        public:
-            void quack() const override
-            {
-                std::fprintf(stdout, "%s\n", "Quack!");
-            }
-        };
+class IQuackBehavior {
+public:
+    virtual ~IQuackBehavior() {}
 
-        class MuteQuack : public IQuackBehavior
-        {
-        public:
-            void quack() const override
-            {
-                std::fprintf(stdout, "%s\n", "Slience!");
-            }
-        };
+    virtual void quack() const = 0;
+};
 
-        class Squeak : public IQuackBehavior
-        {
-        public:
-            void quack() const override
-            {
-                std::fprintf(stdout, "%s\n", "Squeak!");
-            }
-        };
-    } // namespace strategy_pattern
+class Quack : public IQuackBehavior {
+public:
+    void quack() const override {
+        std::fprintf(stdout, "%s\n", "Quack!");
+    }
+};
+
+class MuteQuack : public IQuackBehavior {
+public:
+    void quack() const override {
+        std::fprintf(stdout, "%s\n", "Slience!");
+    }
+};
+
+class Squeak : public IQuackBehavior {
+public:
+    void quack() const override {
+        std::fprintf(stdout, "%s\n", "Squeak!");
+    }
+};
+
+} // namespace strategy_pattern
+
 } // namespace design_patterns
 
 #endif

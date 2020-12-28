@@ -3,36 +3,33 @@
 
 #include <cstdio>
 
-namespace design_patterns
-{
-    namespace strategy_pattern
-    {
-        class IFlyBehavior
-        {
-        public:
-            virtual ~IFlyBehavior() {}
+namespace design_patterns {
 
-            virtual void fly() const = 0;
-        };
+namespace strategy_pattern {
 
-        class FlyWithWings : public IFlyBehavior
-        {
-        public:
-            void fly() const override
-            {
-                std::fprintf(stdout, "%s\n", "I'm flying!");
-            }
-        };
+class IFlyBehavior {
+public:
+    virtual ~IFlyBehavior() {}
 
-        class FlyNoWay : public IFlyBehavior
-        {
-        public:
-            void fly() const override
-            {
-                std::fprintf(stdout, "%s\n", "I cannot fly!");
-            }
-        };
-    } // namespace strategy_pattern
+    virtual void fly() const = 0;
+};
+
+class FlyWithWings : public IFlyBehavior {
+public:
+    void fly() const override {
+        std::fprintf(stdout, "%s\n", "I'm flying!");
+    }
+};
+
+class FlyNoWay : public IFlyBehavior {
+public:
+    void fly() const override {
+        std::fprintf(stdout, "%s\n", "I cannot fly!");
+    }
+};
+
+} // namespace strategy_pattern
+
 } // namespace design_patterns
 
 #endif
