@@ -13,6 +13,6 @@ namespace design_patterns
             virtual void display() const = 0;
         };
     } // namespace observer_pattern
-} // namespace design_patters
+} // namespace design_patterns
 
 #endif
