@@ -1,51 +1,50 @@
 #ifndef SUBJECT_HPP
 #define SUBJECT_HPP
 
-#include <memory>
-#include <list>
 #include "observer.hpp"
+#include <list>
+#include <memory>
 
-namespace design_patterns
-{
-    namespace observer_pattern
-    {
-        class Subject
-        {
-        public:
-            virtual ~Subject() {}
+namespace design_patterns {
 
-            virtual void registerObserver(Observer *newObserver) = 0;
-            virtual void removeObserver(Observer *oldObserver) = 0;
-            virtual void notifyObservers() = 0;
-        };
+namespace observer_pattern {
 
-        class WeatherData : public Subject
-        {
-        public:
-            void setMeasurements(float temperature, float humidity, float pressure);
+class Subject {
+public:
+    virtual ~Subject() {}
 
-            void registerObserver(Observer *newObserver) override;
+    virtual void registerObserver(Observer *newObserver) = 0;
+    virtual void removeObserver(Observer *oldObserver) = 0;
+    virtual void notifyObservers() = 0;
+};
 
-            void removeObserver(Observer *oldObserver) override;
+class WeatherData : public Subject {
+public:
+    void setMeasurements(float temperature, float humidity, float pressure);
 
-            void notifyObservers() override;
+    void registerObserver(Observer *newObserver) override;
 
-        private:
-            std::list<Observer *> observers;
+    void removeObserver(Observer *oldObserver) override;
 
-            float fTemperature;
-            float fHumidity;
-            float fPressure;
-        };
-    } // namespace observer_pattern
+    void notifyObservers() override;
 
-    static void testObserverPattern()
-    {
-        using namespace observer_pattern;
-        WeatherData weatherData;
-        CurrentCoditionDisplay currentCoditionDisplay(&weatherData);
-        weatherData.setMeasurements(80, 60, 100);
-    }
+private:
+    std::list<Observer *> observers;
+
+    float fTemperature;
+    float fHumidity;
+    float fPressure;
+};
+
+} // namespace observer_pattern
+
+static void testObserverPattern() {
+    using namespace observer_pattern;
+    WeatherData weatherData;
+    CurrentCoditionDisplay currentCoditionDisplay(&weatherData);
+    weatherData.setMeasurements(80, 60, 100);
+}
+
 } // namespace design_patterns
 
 #endif

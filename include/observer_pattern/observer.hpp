@@ -3,37 +3,37 @@
 
 #include "display.hpp"
 
-namespace design_patterns
-{
-    namespace observer_pattern
-    {
-        class Subject;
-        class Observer
-        {
-        public:
-            virtual ~Observer() {}
+namespace design_patterns {
 
-            virtual void update(float temp, float humidity, float pressure) = 0;
-        };
+namespace observer_pattern {
 
-        class CurrentCoditionDisplay : public Observer, public IDisplay
-        {
-        public:
-            CurrentCoditionDisplay(Subject *subject);
+class Subject;
 
-            ~CurrentCoditionDisplay();
+class Observer {
+public:
+    virtual ~Observer() {}
 
-            void update(float temp, float humidity, float pressure) override;
+    virtual void update(float temp, float humidity, float pressure) = 0;
+};
 
-            void display() const override;
+class CurrentCoditionDisplay : public Observer, public IDisplay {
+public:
+    CurrentCoditionDisplay(Subject *subject);
 
-        private:
-            Subject *oSubject;
-            float fTemperature;
-            float fHumidity;
-        };
+    ~CurrentCoditionDisplay();
 
-    } // namespace observer_pattern
+    void update(float temp, float humidity, float pressure) override;
+
+    void display() const override;
+
+private:
+    Subject *oSubject;
+    float fTemperature;
+    float fHumidity;
+};
+
+} // namespace observer_pattern
+
 } // namespace design_patterns
 
 #endif
