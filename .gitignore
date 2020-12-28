@@ -4,3 +4,9 @@ main
 CMakeFiles/*
 .vscode/*
 build/*
+src/observer_pattern/CMakeFiles/*
+src/observer_pattern/Makefile
+src/observer_pattern/lib*
+src/observer_pattern/Makefile
+.gitignore
+Makefile

@@ -7,14 +7,15 @@ namespace design_patterns
 {
     namespace strategy_pattern
     {
-        class QuackBehavior
+        class IQuackBehavior
         {
         public:
-            virtual ~QuackBehavior() {}
+            virtual ~IQuackBehavior() {}
+
             virtual void quack() const = 0;
         };
 
-        class Quack : public QuackBehavior
+        class Quack : public IQuackBehavior
         {
         public:
             void quack() const override
@@ -23,7 +24,7 @@ namespace design_patterns
             }
         };
 
-        class MuteQuack : public QuackBehavior
+        class MuteQuack : public IQuackBehavior
         {
         public:
             void quack() const override
@@ -32,7 +33,7 @@ namespace design_patterns
             }
         };
 
-        class Squeak : public QuackBehavior
+        class Squeak : public IQuackBehavior
         {
         public:
             void quack() const override

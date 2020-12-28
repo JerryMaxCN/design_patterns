@@ -13,31 +13,29 @@ namespace design_patterns
         class Duck
         {
         public:
-            Duck(std::shared_ptr<FlyBehavior> flyBehavior,
-                 std::shared_ptr<QuackBehavior> quackBehavior)
+            Duck(std::shared_ptr<IFlyBehavior> flyBehavior,
+                 std::shared_ptr<IQuackBehavior> quackBehavior)
                 : pFlyBehavior(flyBehavior), pQuackBehavior(quackBehavior) {}
 
             virtual ~Duck() {}
 
             virtual void display() const = 0;
 
-            void setFlyBehavior(std::shared_ptr<FlyBehavior> newFlyBehavior)
+            void setFlyBehavior(std::shared_ptr<IFlyBehavior> newFlyBehavior)
             {
                 pFlyBehavior = newFlyBehavior;
             }
-
-            void setQuackBehavior(std::shared_ptr<QuackBehavior> newQuackBehavior)
+            void setQuackBehavior(std::shared_ptr<IQuackBehavior> newQuackBehavior)
             {
                 pQuackBehavior = newQuackBehavior;
             }
 
             void performFly() const { pFlyBehavior->fly(); }
-
             void performQuack() const { pQuackBehavior->quack(); }
 
         private:
-            std::shared_ptr<FlyBehavior> pFlyBehavior;
-            std::shared_ptr<QuackBehavior> pQuackBehavior;
+            std::shared_ptr<IFlyBehavior> pFlyBehavior;
+            std::shared_ptr<IQuackBehavior> pQuackBehavior;
         };
 
         class MallardDuck : public Duck

@@ -7,15 +7,15 @@ namespace design_patterns
 {
     namespace strategy_pattern
     {
-        class FlyBehavior
+        class IFlyBehavior
         {
         public:
-            virtual ~FlyBehavior() {}
+            virtual ~IFlyBehavior() {}
 
             virtual void fly() const = 0;
         };
 
-        class FlyWithWings : public FlyBehavior
+        class FlyWithWings : public IFlyBehavior
         {
         public:
             void fly() const override
@@ -24,7 +24,7 @@ namespace design_patterns
             }
         };
 
-        class FlyNoWay : public FlyBehavior
+        class FlyNoWay : public IFlyBehavior
         {
         public:
             void fly() const override
