@@ -4,12 +4,8 @@ PROJECT(design_pattern)
 
 ADD_COMPILE_OPTIONS(-std=c++2a)
 
-ADD_SUBDIRECTORY(src/observer_pattern)
+ADD_SUBDIRECTORY(observer_pattern)
 
-INCLUDE_DIRECTORIES(include)
-
-AUX_SOURCE_DIRECTORY(src DIR_SRCS)
-
-ADD_EXECUTABLE(main ${DIR_SRCS})
+ADD_EXECUTABLE(main "main.cpp")
 
 TARGET_LINK_LIBRARIES(main OBSERVER_PATTERN)
