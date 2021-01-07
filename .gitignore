@@ -11,3 +11,5 @@ src/observer_pattern/lib*
 src/observer_pattern/Makefile
 .gitignore
 Makefile
+observer_pattern/CMakeFiles/*
+observer_pattern/libOBSERVER_PATTERN.a
