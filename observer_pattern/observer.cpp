@@ -1,6 +1,8 @@
 #include "observer.hpp"
-#include "subject.hpp"
+
 #include <cstdio>
+
+#include "subject.hpp"
 
 namespace design_patterns {
 
@@ -15,16 +17,18 @@ CurrentCoditionDisplay::~CurrentCoditionDisplay() {
     oSubject->removeObserver(this);
 }
 
-void CurrentCoditionDisplay::update(float temp, float humidity, float pressure) {
+void CurrentCoditionDisplay::update(float temp, float humidity,
+                                    float pressure) {
     fTemperature = temp;
     fHumidity = humidity;
     display();
 }
 
 void CurrentCoditionDisplay::display() const {
-    std::fprintf(stdout, "Current conditions: %fF degrees and %f humidity\n", fTemperature, fHumidity);
+    std::fprintf(stdout, "Current conditions: %fF degrees and %f humidity\n",
+                 fTemperature, fHumidity);
 }
 
-} // namespace observer_pattern
+}  // namespace observer_pattern
 
-} // namespace design_patterns
+}  // namespace design_patterns

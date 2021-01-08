@@ -16,20 +16,16 @@ public:
 
 class FlyWithWings : public IFlyBehavior {
 public:
-    void fly() const override {
-        std::fprintf(stdout, "%s\n", "I'm flying!");
-    }
+    void fly() const override { std::fprintf(stdout, "%s\n", "I'm flying!"); }
 };
 
 class FlyNoWay : public IFlyBehavior {
 public:
-    void fly() const override {
-        std::fprintf(stdout, "%s\n", "I cannot fly!");
-    }
+    void fly() const override { std::fprintf(stdout, "%s\n", "I cannot fly!"); }
 };
 
-} // namespace strategy_pattern
+}  // namespace strategy_pattern
 
-} // namespace design_patterns
+}  // namespace design_patterns
 
 #endif

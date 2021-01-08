@@ -32,8 +32,8 @@ private:
     float fHumidity;
 };
 
-} // namespace observer_pattern
+}  // namespace observer_pattern
 
-} // namespace design_patterns
+}  // namespace design_patterns
 
 #endif

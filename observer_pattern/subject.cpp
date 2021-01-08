@@ -1,11 +1,13 @@
 #include "subject.hpp"
+
 #include "observer.hpp"
 
 namespace design_patterns {
 
 namespace observer_pattern {
 
-void WeatherData::setMeasurements(float temperature, float humidity, float pressure) {
+void WeatherData::setMeasurements(float temperature, float humidity,
+                                  float pressure) {
     fTemperature = temperature;
     fHumidity = humidity;
     fPressure = pressure;
@@ -26,6 +28,6 @@ void WeatherData::notifyObservers() {
     }
 }
 
-} // namespace observer_pattern
+}  // namespace observer_pattern
 
-} // namespace design_patterns
+}  // namespace design_patterns

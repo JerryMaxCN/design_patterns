@@ -1,10 +1,11 @@
 #ifndef DUCK_HPP
 #define DUCK_HPP
 
-#include "fly.hpp"
-#include "quack.hpp"
 #include <cstdio>
 #include <memory>
+
+#include "fly.hpp"
+#include "quack.hpp"
 
 namespace design_patterns {
 
@@ -37,14 +38,15 @@ private:
 
 class MallardDuck : public Duck {
 public:
-    MallardDuck() : Duck(std::make_shared<FlyWithWings>(), std::make_shared<Quack>()) {}
+    MallardDuck()
+        : Duck(std::make_shared<FlyWithWings>(), std::make_shared<Quack>()) {}
 
     void display() const override {
         std::fprintf(stdout, "%s\n", "I am a real Mallard duck");
     }
 };
 
-} // namespace strategy_pattern
+}  // namespace strategy_pattern
 
 inline void testStrategyPattern() {
     using namespace strategy_pattern;
@@ -59,6 +61,6 @@ inline void testStrategyPattern() {
     duck->performFly();
 }
 
-} // namespace design_patterns
+}  // namespace design_patterns
 
 #endif

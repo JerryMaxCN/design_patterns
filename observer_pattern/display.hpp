@@ -12,8 +12,8 @@ public:
     virtual void display() const = 0;
 };
 
-} // namespace observer_pattern
+}  // namespace observer_pattern
 
-} // namespace design_patterns
+}  // namespace design_patterns
 
 #endif
