@@ -1,9 +1,10 @@
 #ifndef SUBJECT_HPP
 #define SUBJECT_HPP
 
-#include "observer.hpp"
 #include <list>
 #include <memory>
+
+#include "observer.hpp"
 
 namespace design_patterns {
 
@@ -36,7 +37,7 @@ private:
     float fPressure;
 };
 
-} // namespace observer_pattern
+}  // namespace observer_pattern
 
 static void testObserverPattern() {
     using namespace observer_pattern;
@@ -45,6 +46,6 @@ static void testObserverPattern() {
     weatherData.setMeasurements(80, 60, 100);
 }
 
-} // namespace design_patterns
+}  // namespace design_patterns
 
 #endif
